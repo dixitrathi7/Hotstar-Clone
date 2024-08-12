@@ -44,7 +44,7 @@ function App() {
     </div>
     <div className='z'>
             
-      <Row title="Last releases" fetchUrl={requests.fetchActionMovies} />
+      <Row title="Latest releases" fetchUrl={requests.fetchActionMovies} />
       <Row title="Free-Newly Added" fetchUrl={requests.fetchComedyMovies}/>
       <Row title="Disney Movies" fetchUrl={requests.fetchDocumentaries}/>
       <Platforms/>
