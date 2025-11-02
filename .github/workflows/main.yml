@@ -47,7 +47,7 @@ jobs:
           # Clone repository using HTTPS URL without token
           git clone https://github.com/dixitrathi7/GitOps_K8s_manifest.git gitops
 
-          cd gitops
+          cd gitops/hotstar_clone_manifest
           
           sed -i "s|image: .*|image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/hotstar-poc:${{ github.sha }}|g" deployment.yml
           
