@@ -1,0 +1,31 @@
+name: Build and push the Image on Azure container Registry
+
+on:
+  push:
+    branches:
+      [ main ]
+  workflow_dispatch:  # Allows manual triggering of the workflow and passing of inputs from the GitHub UI 
+        # you can define inputs here if needed
+    
+#    paths:
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.POC_CICD_AKS_CRED }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          tags: |
+            ${{ secrets.ACR_LOGIN_SERVER }}/dev-datagen-backend:${{ github.sha }}
+            ${{ secrets.ACR_LOGIN_SERVER }}/dev-datagen-backend:latest
