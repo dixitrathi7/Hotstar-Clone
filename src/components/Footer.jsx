@@ -27,7 +27,7 @@ function Footer() {
             </div>
 
             <div>
-                <h3 style={{textAlign:"center"}}>Connect with Us</h3>
+                <h3 style={{textAlign:"center"}}>Connect with Me</h3>
                 
                 <div className='ic'>
                     <i class="fa-brands fa-facebook"></i>
