@@ -59,3 +59,4 @@ jobs:
           
           # Push
           git push -f https://${GIT_TOKEN}@github.com/dixitrathi7/GitOps_K8s_manifest.git main
+          
